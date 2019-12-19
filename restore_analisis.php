@@ -1,5 +1,6 @@
 <?php
 session_start();
+error_reporting(0); 
   include_once 'konek.php';
 //include_once 'analis.php';
 
@@ -23,9 +24,7 @@ session_start();
             $hujan =  $res['hujan'];
             $tanah =  $res['tanah'];
             $tinggi =  $res['tinggi'];
-                
-            
-        //error_reporting(0); 
+        
     ?>
 
 
@@ -72,7 +71,7 @@ session_start();
 <body>
     <body id="page-top">
     <!-- Navigation -->
-    <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav" style="background-color: #F05F40;">
+    <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
       <div class="container">
         <a class="navbar-brand js-scroll-trigger" href="index.php">E-Farmer</a>
         <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
@@ -101,7 +100,7 @@ session_start();
     <body>
                <div id="map"></div>
                <?php
-             echo $id_his;
+            //  echo $id_his;
            ?>
           
     <script>
@@ -136,7 +135,7 @@ session_start();
       }
     </script>
     <script async defer
-    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBSHhSMyxh3XrHskeQN40xbTNt2WMQzW94&callback=initMap">
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCh4WWa-MZawNwklwyl4qzFqrwEQjLk0sw&callback=initMap">
     </script>
 
     <?php
@@ -169,7 +168,7 @@ $curl2 = curl_init();
 // Set some options - we are passing in a useragent too here
 curl_setopt_array($curl2, array(
     CURLOPT_RETURNTRANSFER => 1,
-    CURLOPT_URL => 'https://maps.googleapis.com/maps/api/elevation/json?locations=39.7391536,-104.9847034&key=AIzaSyDS36n8mVUcxPAMUcTSptdG8k_vZ-TcdjQ',
+    CURLOPT_URL => 'https://maps.googleapis.com/maps/api/elevation/json?locations=39.7391536,-104.9847034&key=AIzaSyDSZ_O-KuVF-HeqVTMMQ32cbon_yxRc4Xk',
     CURLOPT_USERAGENT => 'Codular Sample cURL Request'
 ));
 // Send the request & save response to $resp
@@ -204,7 +203,7 @@ if (!$suhu==-273.15) {
                 // var_dump($_SESSION["user"]);
             
               ?>
-               <section id="services">
+               <section id="services" style="padding-top: 0px;">
                       <div class="container">
                         <div class="row">
                           <div class="col-lg-12 text-center">
@@ -220,7 +219,7 @@ if (!$suhu==-273.15) {
                               <i class="fas fa-4x fa-thermometer-three-quarters text-primary mb-3 sr-icon-1"></i>
                               <h3 class="mb-3">Suhu Lokasi Anda</h3>
                                       <h2 class="text-muted mb-0">
-                                      <?php echo $suhu?> C
+                                      <?php echo $suhu?>&deg;C
                                      </h2>
                             </div>
                           </div>
@@ -228,7 +227,7 @@ if (!$suhu==-273.15) {
                           <div class="col-lg-3 col-md-6 text-center">
                             <div class="service-box mt-5 mx-auto">
                               <i class="fas fa-4x fa-map-marked-alt text-primary mb-3  sr-icon-2"></i>
-                              <h3 class="mb-3">Ketinggian Anda :</h3>
+                              <h3 class="mb-3">Ketinggian Anda</h3>
                                 <h2  class="text-muted mb-0"><?php echo $ketinggian ."Mdpl"?></h2>
                             </div>
                           </div>
@@ -267,9 +266,39 @@ if (!$suhu==-273.15) {
                           </div>
                         </div>
                       </div>
+
+                      <div class="container">
+                        <div class="row">
+                            <div class="col-lg-2 col-md-6" >
+                            
+                            </div>
+                            
+                            <div class="col-lg-3 col-md-6 text-center">
+                              <div class="service-box mt-5 mx-auto">
+                              <img src="img/latitude.png" alt="nama" >
+                                <h3 class="mb-3 text-center">Latitude (Lintang)</h3>
+                                <h2 class="text-muted mb-0 text-center"> <?php echo $lat?> </h2>
+                              </div>
+                            </div>
+                            <div class="col-lg-2 col-md-6" >
+                            
+                            </div>
+                            <div class="col-lg-3 col-md-6 text-center">
+                              <div class="service-box mt-5 mx-auto">
+                              <img src="img/longitude.png" alt="nama" >
+                                <h3 class="mb-3 text-center">Longitude (Bujur)</h3>
+                                  <h2 class="text-muted mb-0 text-center"><?php echo $lng?></h2>
+                              </div>
+                            </div>
+
+                            <div class="col-lg-2 col-md-6" >
+                            
+                            </div>
+                        </div>
+                      </div>
                     </section>
 
-      <section id="services">
+      <section id="services" style="padding-top: 0px;">
       <div class="container">
         <div class="row">
           <div class="col-lg-12 text-center">
@@ -297,7 +326,7 @@ if (!$suhu==-273.15) {
 
                             <div class="col-lg-3 col-md-6 text-center">
                               <div class="service-box mt-5 mx-auto">
-                              <img  width="252"  class="fas fa-4x text-primary mb-3 sr-icon-3" src="tanaman/<?php echo $data['gambar']; ?>"></img>
+                              <img  width="240" height="240" class="fas fa-4x text-primary mb-3 sr-icon-3" src="tanaman/<?php echo $data['gambar']; ?>"></img>
                                 <h3 class="mb-3 font-weight-bold"><?php echo $data['nama']; ?></h3>
                                 <p class="text-muted mb-0"><h5>Lama Panen <?php echo $data['waktu_panen']; ?> hari</h5></p>
                               </div>

@@ -71,6 +71,8 @@ include_once'konek.php';
                                                         ('$new_id','$user','$pass','$mail')
 
                                                     ");
+
+                                                    error_reporting(0);
                         
                         if($insert){
 

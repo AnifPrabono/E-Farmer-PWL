@@ -1,6 +1,6 @@
 <?php
 session_start();
-//error_reporting(0);
+error_reporting(0);
 
   include_once 'konek.php';
   include_once 'analis.php';
@@ -130,7 +130,7 @@ session_start();
       }
     </script>
     <script async defer
-    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBSHhSMyxh3XrHskeQN40xbTNt2WMQzW94&callback=initMap">
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCh4WWa-MZawNwklwyl4qzFqrwEQjLk0sw&callback=initMap">
     </script>
 
     <?php
@@ -162,7 +162,7 @@ $curl2 = curl_init();
 // Set some options - we are passing in a useragent too here
 curl_setopt_array($curl2, array(
     CURLOPT_RETURNTRANSFER => 1,
-    CURLOPT_URL => 'https://maps.googleapis.com/maps/api/elevation/json?locations=39.7391536,-104.9847034&key=AIzaSyDS36n8mVUcxPAMUcTSptdG8k_vZ-TcdjQ',
+    CURLOPT_URL => 'https://maps.googleapis.com/maps/api/elevation/json?locations=39.7391536,-104.9847034&key=AIzaSyDSZ_O-KuVF-HeqVTMMQ32cbon_yxRc4Xk',
     CURLOPT_USERAGENT => 'Codular Sample cURL Request'
 ));
 // Send the request & save response to $resp
@@ -197,7 +197,7 @@ if (!$suhu==-273.15) {
                 // var_dump($_SESSION["user"]);
             
               ?>
-               <section id="services">
+               <section id="services" style="padding-top: 0px;" >
                       <div class="container">
                         <div class="row">
                           <div class="col-lg-12 text-center">
@@ -206,14 +206,16 @@ if (!$suhu==-273.15) {
                           </div>
                         </div>
                       </div>
-                      <div class="container">
-                        <div class="row">
+
+
+                      <div class="container" >
+                        <div class="row" >
                           <div class="col-lg-3 col-md-6 text-center">
                             <div class="service-box mt-5 mx-auto">
                               <i class="fas fa-4x fa-thermometer-three-quarters text-primary mb-3 sr-icon-1"></i>
                               <h3 class="mb-3">Suhu Lokasi Anda</h3>
                                       <h2 class="text-muted mb-0">
-                                      <?php echo $suhu?> C
+                                      <?php echo $suhu?>&deg;C
                                     </h2>
                             </div>
                           </div>
@@ -221,10 +223,11 @@ if (!$suhu==-273.15) {
                           <div class="col-lg-3 col-md-6 text-center">
                             <div class="service-box mt-5 mx-auto">
                               <i class="fas fa-4x fa-map-marked-alt text-primary mb-3  sr-icon-2"></i>
-                              <h3 class="mb-3">Ketinggian Anda :</h3>
-                                <h2  class="text-muted mb-0"><?php echo $ketinggian?> Mdpl</h2>
+                              <h3 class="mb-3">Ketinggian Anda</h3>
+                                <h2  class="text-muted mb-0"><?php echo $Ketinggian?> Mdpl</h2>
                             </div>
                           </div>
+
                           <div class="col-lg-3 col-md-6 text-center">
                             <div class="service-box mt-5 mx-auto">
                               <i class="fas fa-4x fa-cloud-showers-heavy text-primary mb-3 sr-icon-3"></i>
@@ -240,7 +243,7 @@ if (!$suhu==-273.15) {
                               </p>
                             </div>
                           </div>
-                          <div class="col-lg-3 col-md-6 text-center">
+                          <div class="col-lg-3 col-md-6 text-center" >
                             <div class="service-box mt-5 mx-auto">
                               <i class="fas fa-4x fa-microscope text-primary mb-3 sr-icon-4"></i>
                               <h3 class="mb-3">Ph tanah</h3>
@@ -260,9 +263,39 @@ if (!$suhu==-273.15) {
                           </div>
                         </div>
                       </div>
-                    </section>
 
-      <section id="services">
+                      <div class="container">
+                        <div class="row">
+                            <div class="col-lg-2 col-md-6" >
+                            
+                            </div>
+                            
+                            <div class="col-lg-3 col-md-6 text-center">
+                              <div class="service-box mt-5 mx-auto">
+                              <img src="img/latitude.png" alt="nama" >
+                                <h3 class="mb-3 text-center">Latitude (Lintang)</h3>
+                                <h2 class="text-muted mb-0 text-center"> <?php echo $lat?> </h2>
+                              </div>
+                            </div>
+                            <div class="col-lg-2 col-md-6" >
+                            
+                            </div>
+                            <div class="col-lg-3 col-md-6 text-center">
+                              <div class="service-box mt-5 mx-auto">
+                              <img src="img/longitude.png" alt="nama" >
+                                <h3 class="mb-3 text-center">Longitude (Bujur)</h3>
+                                  <h2 class="text-muted mb-0 text-center"><?php echo $long?></h2>
+                              </div>
+                            </div>
+
+                            <div class="col-lg-2 col-md-6" >
+                            
+                            </div>
+                        </div>
+                      </div>
+                </section>
+
+  <section id="services" style="padding-top: 0px;">
       <div class="container">
         <div class="row">
           <div class="col-lg-12 text-center">
@@ -289,7 +322,7 @@ if (!$suhu==-273.15) {
 
                             <div class="col-lg-3 col-md-6 text-center">
                               <div class="service-box mt-5 mx-auto">
-                              <img  width="252"  class="fas fa-4x text-primary mb-3 sr-icon-3" src="tanaman/<?php echo $data['gambar']; ?>"></img>
+                              <img  width="240" height="240" class="fas fa-4x text-primary mb-3 sr-icon-3" src="tanaman/<?php echo $data['gambar']; ?>"></img>
                                 <h3 class="mb-3 font-weight-bold"><?php echo $data['nama']; ?></h3>
                                 <p class="text-muted mb-0"><h5>Lama Panen <?php echo $data['waktu_panen']; ?> hari</h5></p>
                               </div>
@@ -313,9 +346,9 @@ if (!$suhu==-273.15) {
           
           </div>
                 </div>
-              </section>
+  </section>
       
-      <section class="text-white" style="background-color: #1C2331; font-family:Roboto, sans-serif">
+    <section class="text-white" style="background-color: #1C2331; font-family:Roboto, sans-serif">
         <div class="container text-center">
           <h2 class="mb-4">Simpan Hasil Ananlisis Lokasi Anda</h2>
           <h5 class="mb-4"> Agar hasil analisis dapat di simpan maka anda terlebih dahulu harus melakukan registrasi , Nantinya hasil analisis akan secara otomatis tersimpan

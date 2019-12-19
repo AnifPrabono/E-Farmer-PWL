@@ -1,8 +1,9 @@
 
 <?php
 include 'konek.php';
-$id=$_POST[];
-if (isset($_POST['submit'])) {
+
+$id = $_POST[];
+if (isset($_POST ['submit'])) {
 	$namafile=$_FILES['poto']['name'];
 	$nametmp=$_FILES['poto']['tmp_name'];
 	$folder='tanaman/';
@@ -19,7 +20,7 @@ if (isset($_POST['submit'])) {
 		{
 
 			echo "gagal save  => ";
-			echo  var_dump($namafile);
+			//echo  var_dump($namafile);
 		}
 }
 

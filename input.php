@@ -120,7 +120,7 @@
 ?>
 
                     <script async defer
-                        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBSHhSMyxh3XrHskeQN40xbTNt2WMQzW94&callback=initMap">
+                        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCh4WWa-MZawNwklwyl4qzFqrwEQjLk0sw&callback=initMap">
                     </script>
 
 

@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Waktu pembuatan: 25 Nov 2019 pada 20.33
+-- Waktu pembuatan: 19 Des 2019 pada 15.58
 -- Versi server: 10.4.6-MariaDB
 -- Versi PHP: 7.3.9
 
@@ -21,6 +21,26 @@ SET time_zone = "+00:00";
 --
 -- Database: `e_farmer`
 --
+
+-- --------------------------------------------------------
+
+--
+-- Struktur dari tabel `admin`
+--
+
+CREATE TABLE `admin` (
+  `id_user` varchar(5) NOT NULL,
+  `username` varchar(70) NOT NULL,
+  `password` varchar(255) NOT NULL,
+  `email` varchar(50) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data untuk tabel `admin`
+--
+
+INSERT INTO `admin` (`id_user`, `username`, `password`, `email`) VALUES
+('U1', 'admin', '$2y$11$f8/O/sPMyj8pkP9FMDSa9OBoK.u0rxFeImQtkf5HQRMneoB6VjLWS', 'admin@gmail.com');
 
 -- --------------------------------------------------------
 
@@ -69,13 +89,16 @@ CREATE TABLE `history` (
 --
 
 INSERT INTO `history` (`id_history`, `id_user`, `hujan`, `suhu`, `tanah`, `tinggi`, `lat`, `lng`, `time`) VALUES
-('H5c187b669', 'U5', 'H003', '31', 't04', 'K01', '-7.7581519', '110.4130965', '2018-12-18'),
-('H5c187b91b', 'U5', 'H003', '31', 't04', 'K01', '-7.758165', '110.413091', '2018-12-18'),
-('H5c18b24ba', 'U4', 'H003', '32', 't04', 'K01', '-7.758162799999999', '110.4131117', '2018-12-18'),
 ('H5d923c870', 'U6', 'H003', '23.14', 't04', '', '-7.7580896', '110.4131398', '2019-09-30'),
 ('H5d923d1c1', 'U8', 'H005', '23.14', 't01', '', '-7.7580874999999985', '110.41310899999999', '2019-09-30'),
 ('H5dab163db', 'U6', 'H001', '27.84', 't02', '', '-6.42994876935472', '106.79372551586914', '2019-10-19'),
-('H5daf236c8', 'U6', 'H005', '22.48', 't05', '', '-7.757545995919756', '110.40860888133287', '2019-10-22');
+('H5daf236c8', 'U6', 'H005', '22.48', 't05', '', '-7.757545995919756', '110.40860888133287', '2019-10-22'),
+('H5ddf87404', 'U6', 'H003', '34', 't04', '', '-7.758154599999999', '110.41312459999999', '2019-11-28'),
+('H5de13ef19', 'U1', 'H004', '25.8', 't03', '', '-7.7581215', '110.41311739999999', '2019-11-29'),
+('H5de69b947', 'U1', 'H002', '24.07', 't01', '', '-7.7581408', '110.4131324', '2019-12-04'),
+('H5de69bd91', 'U9', 'H003', '24.07', 't04', '', '-7.7581412', '110.4131785', '2019-12-04'),
+('H5df654d33', 'U1', 'H003', '23.73', 't02', '', '-7.758124199999999', '110.41309919999999', '2019-12-15'),
+('H5df65508d', 'U8', 'H003', '23.73', 't04', '', '-7.758114', '110.41316929999999', '2019-12-15');
 
 -- --------------------------------------------------------
 
@@ -255,12 +278,18 @@ CREATE TABLE `user` (
 --
 
 INSERT INTO `user` (`id_user`, `username`, `password`, `email`) VALUES
-('U6', 'admin', '$2y$11$7DtOTBT8s7g9gDz/1ryZuuKo/.pZDbDSbzp0S.j3zreNVlXy5t7we', 'admin@admin.tani'),
-('U8', 'anif', '$2y$11$JJObw9fBZf1UPvjjAlnRLuxnaGkiVOES8H6Si7WW.FWxmvNdV9qKW', 'anif@gmail.com');
+('U8', 'anif', '$2y$11$JJObw9fBZf1UPvjjAlnRLuxnaGkiVOES8H6Si7WW.FWxmvNdV9qKW', 'anif@gmail.com'),
+('U9', 'tedi', '$2y$11$JoB3sjjvm/rqNH0iUQ4DoebU32RqUyW3dYb7xX2xjSfE/fAYw64/m', 'tedi@gmail.com');
 
 --
 -- Indexes for dumped tables
 --
+
+--
+-- Indeks untuk tabel `admin`
+--
+ALTER TABLE `admin`
+  ADD PRIMARY KEY (`id_user`);
 
 --
 -- Indeks untuk tabel `curah_hujan`

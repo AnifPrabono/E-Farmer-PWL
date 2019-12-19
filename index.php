@@ -61,7 +61,7 @@
         <div class="row">
           <div class="col-lg-10 mx-auto">
             <h1 class="text-uppercase" >
-              <strong>MARI KENALI GEBETAN  ATAU SELINGKUHAN ANDA DISINI</strong>
+              <strong>MARI TINJAU LEBIH JAUH LAHAN PERTANIAN ANDA DISINI</strong>
             </h1>
             <hr>
           </div>
@@ -122,7 +122,7 @@
             <div class="service-box mt-5 mx-auto">
               <i class="fas fa-4x fa-heart text-primary mb-3 sr-icon-4"></i>
               <h3 class="mb-3">Save Hasil Analisis</h3>
-              <p class="text-muted mb-0">Simpan Hasil Analisi pada account anda, jika belum punya silahkan daftar terlebih dahulu</p>
+              <p class="text-muted mb-0">Simpan Hasil Analisa pada account anda, jika belum punya silahkan daftar terlebih dahulu</p>
             </div>
           </div>
         </div>
@@ -300,11 +300,11 @@
             <div class="modal-body">
               <form>
                 <div class="form-group">
-                  <label for="recipient-name" class="col-form-label">Recipient:</label>
+                  <label for="recipient-name" class="col-form-label" style="color:black">Recipient:</label>
                   <input type="text" class="form-control" id="recipient-name">
                 </div>
                 <div class="form-group">
-                  <label for="message-text" class="col-form-label">Message:</label>
+                  <label for="message-text" class="col-form-label" style="color:black">Message:</label>
                   <textarea class="form-control" id="message-text"></textarea>
                 </div>
               </form>

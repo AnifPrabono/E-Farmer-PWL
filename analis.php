@@ -20,7 +20,7 @@ function analisis ($data) {
 	// Set some options - we are passing in a useragent too here
 	curl_setopt_array($curl2, array(
 		CURLOPT_RETURNTRANSFER => 1,
-		CURLOPT_URL => 'https://maps.googleapis.com/maps/api/elevation/json?locations='."$lat".','."$long".'&key=AIzaSyDS36n8mVUcxPAMUcTSptdG8k_vZ-TcdjQ',
+		CURLOPT_URL => 'https://maps.googleapis.com/maps/api/elevation/json?locations='."$lat".','."$long".'&key=AIzaSyDSZ_O-KuVF-HeqVTMMQ32cbon_yxRc4Xk',
 		CURLOPT_USERAGENT => 'Codular Sample cURL Request'
 	));
 	// Send the request & save response to $resp

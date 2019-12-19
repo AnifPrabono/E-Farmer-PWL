@@ -1,5 +1,6 @@
 <?php 
 session_start();
+error_reporting(0);
 
 include_once '../konek.php';
  
@@ -8,7 +9,7 @@ include_once '../konek.php';
         $user=$_POST['username'];
         $pass=$_POST['pass'];
 
-        $query=$dbkonek->query("select * from user where username='$user' limit 1");
+        $query=$dbkonek->query("select * from admin where username='$user' limit 1");
         while ($result=mysqli_fetch_array($query)) {
             $db_p=$result['password'];
             $db_u=$result['username'];
@@ -24,6 +25,7 @@ include_once '../konek.php';
 
             echo"login sukses;";
             header("Location: index.php");
+            
         }else{
                 
             echo "<script type='text/javascript'>

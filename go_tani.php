@@ -104,7 +104,7 @@ $curl2 = curl_init();
 // Set some options - we are passing in a useragent too here
 curl_setopt_array($curl2, array(
     CURLOPT_RETURNTRANSFER => 1,
-    CURLOPT_URL => 'https://maps.googleapis.com/maps/api/elevation/json?locations=39.7391536,-104.9847034&key=AIzaSyDS36n8mVUcxPAMUcTSptdG8k_vZ-TcdjQ',
+    CURLOPT_URL => 'https://maps.googleapis.com/maps/api/elevation/json?locations=39.7391536,-104.9847034&key=AIzaSyDSZ_O-KuVF-HeqVTMMQ32cbon_yxRc4Xk',
     CURLOPT_USERAGENT => 'Codular Sample cURL Request'
 ));
 // Send the request & save response to $resp
@@ -124,7 +124,7 @@ echo "hasil evaluasi google =" .$resultJson2["results"][0]["elevation"];
 ?>
 
                     <script async defer
-                        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBSHhSMyxh3XrHskeQN40xbTNt2WMQzW94&callback=initMap">
+                        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCh4WWa-MZawNwklwyl4qzFqrwEQjLk0sw&callback=initMap">
                     </script>
 
                 </body>
